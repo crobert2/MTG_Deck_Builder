@@ -6,24 +6,32 @@ using namespace std;
 class Card{
 	private:
 		string name;
+		string block;
+		string artist;
+		string color;
 	public:
 		Card();
 		~Card();
+		string get_name();
+		string get_block();
+		string get_artist();
+		string get_color();
 };
 
 class Land: public Card{
-
+	private:
+	public:
 };
 
 class Non-Land: public Card{
 	private:
 		int converted_mana_cost;
 		string mana_cost;
-		string color;
+		string effect;
 	public:
 		int get_converted_mana_cost();
 		string get_mana_cost();
-		string get_color();
+		string get_effect();
 };
 
 class Creature: public Non-Land{
@@ -31,12 +39,10 @@ class Creature: public Non-Land{
 		int power;
 		int toughness;
 		string type;
-		string effect;
 	public:
 		int get_power();
 		int get_toughness();
 		string get_type();
-		string get_effect();
 };
 
 class Sorcery: public Non-Land{
